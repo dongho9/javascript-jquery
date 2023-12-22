@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 예제</title>
+    <style>
+        #wrap{
+            width: 430px;
+            border: 3px solid #000;
+            margin: 0 auto;
+        }
+        header{
+            height: 543px;
+        }
+        header > img, footer > img{
+            width: 100%;
+        }
+        #gnb{
+            background-color: #cbcbd3;
+            text-align: center;
+        }
+        #gnb img{
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+    <h3>2. 모바일 화면에서 버튼을 클릭시 조명끄기, 조명켜기 기능 구현하기</h3>
+    <div id="wrap">
+        <header>
+            <img src="img/car_01.jpg" alt="차1" id="car">
+        </header>
+
+        <nav id="gnb">
+            <img src="img/light_off.png" alt="조명끄기" id="light_off">
+            <img src="img/light_on.png" alt="조명켜기" id="light_on">
+        </nav>
+
+        <footer>
+            <img src="img/car_03.jpg" alt="푸터" id="footer">
+        </footer>
+    </div>
+    <script>
+        const l_off = document.getElementById('light_off');
+        const l_on = document.getElementById('light_on');
+
+        l_off.addEventListener('click', function(){
+            // window.alert('전구끄기 성공')
+            // document.getElementById('light_on').style.border="none"
+            // document.getElementById('light_off').style.border="3px solid blue"
+            document.getElementById('light_off').style.borderRadius = '50%';
+            // 1. header 이미지 변경
+            document.getElementById('car').src='img/car01_01.jpg'
+            // 2. gnb배경 변경
+            document.getElementById('gnb').style.backgroundImage="url('img/btn_back.jpg')"
+            // 3. footer 이미지 변경
+            document.getElementById('footer').src='img/car01_03.jpg'
+        });
+
+        
+        l_on.addEventListener('click', function(){
+            // document.getElementById('light_off').style.border="none"
+            // document.getElementById('light_on').style.border="3px solid blue"
+            document.getElementById('light_on').style.borderRadius = '50%';
+            // window.alert('전구켜기 성공')
+            document.getElementById('car').src='img/car_01.jpg'
+            // 2. gnb배경 변경
+            // document.getElementById('gnb').style.backgroundImage="url('imgcar_02.jpg')"
+            document.getElementById('gnb').style.backgroundImage='none'
+            // 3. footer 이미지 변경
+            document.getElementById('footer').src='img/car_03.jpg'
+        });
+    </script>
+</body>
+</html>

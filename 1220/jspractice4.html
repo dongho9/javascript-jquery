@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_함수실습예제_모바일 계산기 구현하기</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            text-align: center;
+            width: 200px;
+            height: 300px;
+            margin: 0 auto;
+            border: 3px solid royalblue;
+        }
+        h2{
+            color: royalblue;
+            padding-bottom: 5px;
+        }
+        ul{
+            display: grid;
+            grid-gap: 5px;
+            grid-template-rows: repeat(6, auto);
+            grid-template-columns: repeat(4, auto);
+            justify-content: space-around;
+            grid-template-areas: 
+            "i1 i1 i1 i1"
+            "i2 i3 i4 i5"
+            "i6 i7 i8 i9"
+            "i10 i11 i12 i13"
+            "i14 i15 i16 i17"
+            "i19 i20 i21 i18"
+            ;
+        }
+        ul li{
+            list-style: none;
+        }
+        input[type=text]{
+            width: 190px;
+            height: 25px;
+            outline: none;
+            background-color: paleturquoise;
+            color: royalblue;
+            font-weight: bold;
+            border: none;
+        }
+        input[type=button]{
+            width: 40px;
+            height: 40px;
+            background-color: paleturquoise;
+            border: none;
+            border-radius: 5px;
+        }
+        input[type=button]:hover{
+            background-color: royalblue;
+            color: #fff;
+        }
+        .i1{
+            grid-area: i1;
+        }
+        .i2{
+            grid-area: i2;
+        }
+        .i3{
+            grid-area: i3;
+        }
+        .i4{
+            grid-area: i4;
+        }
+        .i5{
+            grid-area: i5;
+        }
+        .i6{
+            grid-area: i6;
+        }
+        .i7{
+            grid-area: i7;
+        }
+        .i8{
+            grid-area: i8;
+        }
+        .i9{
+            grid-area: i9;
+        }
+        .i10{
+            grid-area: i10;
+        }
+        .i11{
+            grid-area: i11;
+        }
+        .i12{
+            grid-area: i12;
+        }
+        .i13{
+            grid-area: i13;
+        }
+        .i14{
+            grid-area: i14;
+        }
+        .i15{
+            grid-area: i15;
+        }
+        .i16{
+            grid-area: i16;
+        }
+        .i17{
+            grid-area: i17;
+        }
+        .i18{
+            grid-area: i18;
+        }
+        .i19{
+            grid-area: i19;
+        }
+        .i20{
+            grid-area: i20;
+        }
+        .i21{
+            grid-area: i21;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>계산기</h2>
+        <ul>
+            <li class="i1">
+                <input type="text" id="result">
+            </li>
+            <li class="i2">
+                <input type="button" value="1" onclick="cal(1)">
+            </li>
+            <li class="i3">
+                <input type="button" value="2" onclick="cal(2)">
+            </li>
+            <li class="i4">
+                <input type="button" value="3" onclick="cal(3)">
+            </li>
+            <li class="i5">
+                <input type="button" value="+" onclick="cal('+')">
+            </li>
+            <li class="i6">
+                <input type="button" value="4" onclick="cal(4)">
+            </li>
+            <li class="i7">
+                <input type="button" value="5" onclick="cal(5)">
+            </li>
+            <li class="i8">
+                <input type="button" value="6" onclick="cal(6)">
+            </li>
+            <li class="i9">
+                <input type="button" value="-" onclick="cal('-')">
+            </li>
+            <li class="i10">
+                <input type="button" value="7" onclick="cal(7)">
+            </li>
+            <li class="i11">
+                <input type="button" value="8" onclick="cal(8)">
+            </li>
+            <li class="i12">
+                <input type="button" value="9" onclick="cal(9)">
+            </li>
+            <li class="i13">
+                <input type="button" value="X" onclick="cal('*')">
+            </li>
+            <li class="i14">
+                <input type="button" value="0" onclick="cal(0)">
+            </li>
+            <li class="i15">
+                <input type="button" value="=" onclick="result()">
+            </li>
+            <li class="i16">
+                <input type="button" value="÷" onclick="cal('/')">
+            </li>
+            <li class="i17">
+                <input type="button" value="." onclick="cal('.')">
+            </li>
+            <li class="i18">
+                <input type="button" value="C" onclick="init()">
+            </li>
+            <li class="i19">
+                <input type="button" value="빈">
+            </li>
+            <li class="i20">
+                <input type="button" value="칸">
+            </li>
+            <li class="i21">
+                <input type="button" value="임">
+            </li>
+        </ul>
+    </div>
+    <script>
+        // 1. 출력결과를 표시하기 위한 요소 변수선언
+        let res = document.getElementById('result');
+
+        // 각각 버튼 클릭시 해당 매개변수 값을 함수의 매개변수로 대입
+        function cal(op){
+            console.log(op);
+            let output = res.value + op; //연산수식을 만들어 변수에 저장
+
+            res.value = output;
+        }
+        //3. =버튼 클릭시 result함수 호출하여 연산계산결과가 나오도록 함.
+        function result(){
+            res.value = eval(res.value);
+        }
+
+        function init(){ //값 지우기
+            res.value = ""; 
+        }
+    </script>
+</body>
+</html>

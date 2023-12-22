@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쿠팡예제</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+    .box{
+    margin: 0 auto;
+      width: 325px;
+      height: 600px;
+      border-bottom: 1px solid #d3d3d3;
+      position: relative;
+      overflow: hidden;
+    }
+    .title{
+        color: royalblue;
+    }
+    #total{
+        border-top: 3px solid #ff69b4;
+    }
+    span.fas{
+        font-size: 50px;
+        color: #fff;
+        background-color: rgba(0,0,0,.7);
+        position: absolute;
+        bottom: 40%;
+        cursor: pointer;
+    }
+    span.fa-angle-right{
+        right: 0;
+    }
+    #total img{
+        width: 100%;
+    }
+  </style>
+</head>
+<body>
+    <div class="box">
+        <h2>HOT! TREND <br> <span class="title">추천 광고상품</span></h2>
+        <div id="total">
+
+        </div>
+        <span class="fas fa-angle-left" id="l_btn"></span>
+        <span class="fas fa-angle-right" id="r_btn"></span>
+    </div>
+
+    <script>
+        let img = ['coupang1', 'coupang2','coupang3', 'coupang4','coupang5','coupang6','coupang7','coupang8','coupang9','coupang10','coupang11',
+        'coupang12','coupang13','coupang14','coupang15','coupang16','coupang17','coupang18']
+        let num = Math.floor(Math.random()*18);
+        console.log(num);
+        const left_btn = document.getElementById('l_btn');
+        const right_btn = document.getElementById('r_btn');
+        
+        document.getElementById('total').innerHTML='<img src="img/'+img[num]+'.png" alt="쿠팡">';
+
+                
+        left_btn.addEventListener('click',function(){
+            if(num==0){
+                num=17;
+            }else{
+                num--;
+            }
+            document.getElementById('total').innerHTML='<img src="img/'+img[num]+'.png" alt="쿠팡">';
+        });
+
+        right_btn.addEventListener('click',function(){
+            if(num==17){
+                num=0;
+            }else{
+                num++;
+            }
+            document.getElementById('total').innerHTML='<img src="img/'+img[num]+'.png" alt="쿠팡">';
+        });
+    </script>
+</body>
+</html>

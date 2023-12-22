@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_자바스크립트_연산자</title>
+    <script>
+        // 1. 산술 연산자
+        let a = 10;
+        let b = 5;
+        // let c = prompt("숫자를 입력하세요");
+
+        // 출력
+        document.write(a+b+'<br>');
+        document.write(a*b+'<br>'); 
+        document.write(a%b +'<br>');
+
+        // if(c%2==0){
+        //     document.write("짝수입니다<br>");
+        // }else{
+        //     document.write("홀수입니다<br>");
+        // }
+
+        // 2. 비교 연산자
+        let res = a < b;
+        document.write(res+'<br>');
+
+        res = a == b;
+        document.write(res+'<br>');
+
+        // 3. 대입연산자
+        res = a = b;
+        document.write(res+'<br>');
+
+        // 4. 증감연산자
+        res = a++; //먼저 출력하고 그 뒤에 1을 더함 
+        document.write(res + '<br>'); 
+        
+        res = ++a; //더하고 출력함
+        document.write(res +'<br>');
+
+        // 5. 논리연산자 &&(and), ||(or), !(not)
+        document.write((1>2)&&(1<2)); //둘다 만족하면 트루
+        document.write((1>2)||(1<2)); //둘 중 하나라도 만족하면 트루
+
+        // 6. 문자열 결합연산자 : +
+
+        let name, region;
+
+        name = '강동호';
+        region = '서울';
+
+        document.write('<br>'+name+region);
+
+        // // 7.삼항조건연산자 : 조건식? 실행문1:실행문2;
+        // let score = prompt("점수를 입력하세요");
+
+        // score >= 60?alert('합격'):alert('불합격');
+
+        // 8.타입연산자 = typeof(데이터 타입을 구분해주는 연산자임.)
+
+        // document.write('<br>'+typeof(score));
+        
+        // 실습예제
+        let id = prompt("아이디를 입력하세요");
+        let pw = prompt("비밀번호를 입력하세요");
+        // (id=='master' || id=='abcd' || id=='naver')&&(pw=='1234')?alert('인증성공'):alert('인증실패');
+
+        let join = (id=='master' || id=='abcd' || id=='naver')&&(pw='1234');
+        let result = join?alert('인증성공'):alert('인증실패');
+        
+</script>
+</head>
+<body>
+    <h2>02_자바스크립트_연산자</h2>
+    <p>자바스크립트 연산자는 사용자가 조건식을 만들어서 원하는 결과를 출력하고자 할 때 사용하는 기호이다.</p>
+    <ul>
+        <li>산술연산자 : +, 0, *, /, %(나머지)</li>
+        <li>문자열 결합연산자 : +</li>
+        <li>비교연산자 : >, <, ==, ===</li>
+        <li>대입연산자 : =, +=, -=</li>
+        <li>증감연산자 : ++(1씩 증가), --(1씩 감소)</li>
+        <li>논리연산자 : &&(and), ||(or), !(not)</li>
+        <li>삼항조건연산자 : 조건식? 조건이 맞을 때 출력값(1):조건이 맞지 않을 때 출력 값(2)</li>
+        <li>타입연산자 - typeof(데이터 타입을 구분하고 형식을 알려줌)</li>
+    </ul>
+</body>
+</html>

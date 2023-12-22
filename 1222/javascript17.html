@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01자바스립트 내장객체_수학(Math)객체</title>
+    <style>
+        .banner{
+            width: 420px;
+            height: 240px;
+            border: 3px solid #000;
+        }
+        #banner_img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h2>01자바스크립트 내장객체_수학(Math)객체</h2>
+    <p>수학객체는 다른 내장객체와는 다르게 new키워드를 사용하지 않는 '정적인 객체'이다.</p>
+    <p>객체(object)는 메서드, 속성으로 나누어진다.</p>
+    <p>메서드 : 기능적인 동작을 말하며 write();</p>
+    <p>속성 : 서식 등을 말하며 style.color='서식내용'</p>
+
+    <h3>수학객체의 속성들</h3>
+    <ul>
+        <li>e : 상수</li>
+        <li>PI : 원주율</li>
+        <li>SQRT2</li>
+        <li>SQRT1_2</li>
+        <li>LN2</li>
+        <li>LN10</li>
+        <li>LOG2E</li>
+        <li>LOG10E</li>
+    </ul>
+    <h3>수학객체의 메서드 종류</h3>
+    <ul>
+        <li>max(숫자1, 숫자2, 숫자3....) : 숫자들 중에서 최대 값을 반환</li>
+        <li>min(숫자1, 숫자2, 숫자3....) : 숫자들 중에서 최소 값을 반환</li>
+        <li>round(숫자) : 소수점 첫째 자리를 반올림</li>
+        <li>ceil(숫자) : 소수점 자리를 무조건 올림</li>
+        <li>floor(숫자) : 소수점 자리를 무조건 절삭</li>
+        <li>abs(숫자) : 수의 절대 값을 반환</li>
+        <li>random(숫자) : 0과 1사이의 난수를 표시</li>
+    </ul>
+
+    <div class="banner">
+        <img src="images/banner01.jpg" alt="배너1" id="banner_img">
+    </div>
+    <script>
+        // 수학객체 메서드 사용하기
+        let a, b, c;
+        a = 10;
+        b = 50;
+        c = 0.46789;
+
+
+
+        let max = Math.max(a, b); // a와 b중 최대 값을 max라는 변수에 저장
+        document.write('최대 값은 ' +max+'입니다.<br>');
+        let min = Math.min(a, b);
+        document.write('최소 값은 '+min+'입니다.<br>');
+        
+        let round = Math.round(c); //반올림
+        document.write('반올림 : '+round+'<br>');
+
+        let ceil = Math.ceil(c); //무조건올림
+        document.write('올림 : '+ceil+'<br>');
+
+        let floor = Math.floor(c); //무조건절삭
+        document.write('절삭 : '+floor+'<br>');
+
+        let abs = Math.abs(-123.45789);  //절대값
+        document.write('절대값 : '+abs+'<br>');
+
+        let random = Math.random();
+        document.write('난수 : '+random+'<br>');
+
+        let ran_n = Math.random()*4+1;
+        let ran_n2 = Math.floor(ran_n);
+        document.write(ran_n2);
+
+        // let ran_n = Math.ceil(Math.random()*4);
+        // document.write(ran_n);
+        document.getElementById('banner_img').src="images/banner0"+ran_n2+".jpg";
+    </script>
+</body>
+</html>
