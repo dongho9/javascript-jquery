@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모름</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            width: 100%;
+            display: block;
+        }
+        input[type=button]{
+            width: 100%;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;    
+            line-height: 48px;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/banner.jpg" alt="배너">
+    <input type="button" value="닫기" id="close">
+
+    <script>
+        const c_btn = document.getElementById('close');
+
+        c_btn.addEventListener('click', function(){
+            window.close('popup.html');
+            document.bgColor="none";
+        })
+    </script>
+</body>
+</html>
