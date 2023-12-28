@@ -66,7 +66,10 @@ stop_btn.addEventListener('click',function(){
     clearInterval(Timer);
 });
 
-play_btn.addEventListener('click',function(){
+play_btn.addEventListener('click',function(e){
+    //기존 자동재생이 되고 있다면 제거하고
+    clearInterval(Timer);
+    // 3초마다 움직이게 함
     Timer = setInterval(function(){
         if(count==2){
             count=0;
@@ -75,5 +78,6 @@ play_btn.addEventListener('click',function(){
         }
         mslide(count);
         //mslide에 count값을 넘겨서 자동으로 움직이게 한다.
-    },3000);
+    }, 3000);
+    e.preventDefault(); //이벤트 중복현상을 제거한다
 });
